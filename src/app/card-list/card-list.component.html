@@ -7,7 +7,16 @@
         <p>{{ error }}</p>
     </div>
 } @else if (!isLoading && !error){
-    @for (card of cards; track card.id){
+    <div class="card-list-container">
+    @for (card of paginatedCards; track card.id){
         <img [src]="card.card_images[0].image_url" alt="{{ card.name }}">
     }
+    <div class="pagination-controls">
+        <button (click)="previousPage()" [disabled]="page === 1">Precedente</button>
+        <span>Pagina {{ page }} di {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="page === totalPages">Successivo</button>
+    </div>
+    </div>
+
+    
 }

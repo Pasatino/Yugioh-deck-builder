@@ -1,0 +1,12 @@
+.card-list-container > img{
+    width: 100px;
+    height: 150px;
+}
+
+.pagination-controls {
+    margin-top: 10px;
+  }
+  
+  .pagination-controls button {
+    margin: 0 5px;
+  }
