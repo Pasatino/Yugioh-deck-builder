@@ -9,7 +9,7 @@ import type { Card } from './types/card.model';
   providedIn: 'root'
 })
 export class YugiohApiService {
-
+  
   private apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
   
   constructor(private http: HttpClient) { }

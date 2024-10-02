@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { YugiohApiService } from '../yugioh-api.service';
-import { Card } from '../types/card.model';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+
+import type { Card } from '../types/card.model';
 
 @Component({
   selector: 'app-card-list',
   standalone: true,
   imports: [],
-  providers: [provideHttpClient(withFetch())],
+  providers: [],
   templateUrl: './card-list.component.html',
   styleUrl: './card-list.component.css'
 })
@@ -24,10 +24,14 @@ export class CardListComponent implements OnInit {
       next: (cards) => {
         this.cards = cards;
         this.isLoading = false;
+        console.log(this.cards);
+        
       },
       error: (err) => {
         this.error = err.message;
         this.isLoading = false;
+        console.log(this.cards);
+        
       }
     });
   }
