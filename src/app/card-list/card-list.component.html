@@ -1,0 +1,13 @@
+@if (isLoading){
+    <div>
+        <p>Loading cards...</p>
+    </div>
+} @else if (error) {
+    <div>
+        <p>{{ error }}</p>
+    </div>
+} @else if (!isLoading && !error){
+    @for (card of cards; track card.id){
+        <img [src]="card.card_images[0].image_url" alt="{{ card.name }}">
+    }
+}
